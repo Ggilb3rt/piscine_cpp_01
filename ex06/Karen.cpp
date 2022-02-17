@@ -37,7 +37,7 @@ void    Karen::_warning( void )
 void    Karen::_error( void )
 {
     std::cout << RED << "[ ERROR ]" << RESET << std::endl;
-    std::cout << "his is unacceptable ! I want to speak to the manager now." << std::endl;
+    std::cout << "This is unacceptable ! I want to speak to the manager now." << std::endl;
 }
 
 void    Karen::complain( std::string level )
