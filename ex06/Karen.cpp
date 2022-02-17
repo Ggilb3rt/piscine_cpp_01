@@ -3,37 +3,40 @@
 
 Karen::Karen(/* args */)
 {
-    std::cout << "A wild Karen appears !" << std::endl;
+    std::cout << GREEN << "A wild Karen appears !" << RESET << std::endl;
     return ;
 }
 
 Karen::~Karen()
 {
-    std::cout << "Karen run away !" << std::endl;
+    std::cout << GREEN << "Karen run away !" << RESET << std::endl;
     return ;
 }
 
 void    Karen::_debug( void )
 {
-    std::cout << CYAN << "DEBUG : " << RESET;
-    std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do !" << std::endl;
+    std::cout << CYAN << "[ DEBUG ]" << RESET << std::endl;
+    std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger." << std::endl;
+    std::cout << "I really do !" << std::endl;
 }
 
 void    Karen::_info( void )
 {
-    std::cout << BLUE << "INFO : " << RESET;
-    std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger ! If you did, I wouldn’t be asking for more !" << std::endl;
+    std::cout << BLUE << "[ INFO ]" << RESET << std::endl;
+    std::cout << "I cannot believe adding extra bacon costs more money." << std::endl;
+    std::cout << "You didn’t put enough bacon in my burger ! If you did, I wouldn’t be asking for more !" << std::endl;
 }
 
 void    Karen::_warning( void )
 {
-    std::cout << YELLOW << "WARNING : " << RESET;
-    std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;
+    std::cout << YELLOW << "[ WARNING ]" << RESET << std::endl;
+    std::cout << "I think I deserve to have some extra bacon for free." << std::endl;
+    std::cout << "I’ve been coming for years whereas you started working here since last month." << std::endl;
 }
 
 void    Karen::_error( void )
 {
-    std::cout << RED << "ERROR : " << RESET;
+    std::cout << RED << "[ ERROR ]" << RESET << std::endl;
     std::cout << "his is unacceptable ! I want to speak to the manager now." << std::endl;
 }
 
@@ -55,25 +58,21 @@ void    Karen::complain( std::string level )
         {
             f = &Karen::_debug;
             (this->*f)();
-            break;
         }
         case e_info:
         {
             f = &Karen::_info;
             (this->*f)();
-            break;
         }
         case e_warning:
         {
             f = &Karen::_warning;
             (this->*f)();
-            break;
         }
         case e_error:
         {
             f = &Karen::_error;
             (this->*f)();
-            break;
         }
         default:
         {
@@ -83,19 +82,28 @@ void    Karen::complain( std::string level )
     }
 }
 
+
 // void    Karen::complain( std::string level )
 // {
 //     std::string     type[TYPE] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-//     functPtr            funct[TYPE];
-
-//     funct[0] = &Karen::_debug;
-//     funct[1] = &Karen::_info;
-//     funct[2] = &Karen::_warning;
-//     funct[3] = &Karen::_error;
+//     void            (Karen::*f[TYPE])(void) = {
+//         &Karen::_debug,
+//         &Karen::_info,
+//         &Karen::_warning,
+//         &Karen::_error
+//     };
+//     bool            print_all = false;
 
 //     for (int i = 0; i < TYPE; i++)
 //     {
 //         if (type[i] == level)
-//             (this->*funct[i])();
+//             print_all = true;
+//         if (print_all)
+//         {
+//             (this->*f[i])();
+//             std::cout << std::endl;
+//         }
 //     }
+//     if (!print_all)
+//         std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 // }
