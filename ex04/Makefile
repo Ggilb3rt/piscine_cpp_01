@@ -1,11 +1,12 @@
 #Coucou
 
-NAME = replace
+NAME = replacer
 FLAGS = -Wall -Wextra -Werror 
 STD = -std=c++98
 COMPIL = c++
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
+TESTFILES = files/
 
 .PHONY : all re fclean clean
 
@@ -19,6 +20,7 @@ $(NAME): $(OBJ)
 
 clean:
 	rm -rf $(OBJ)
+	rm -rf $(TESTFILES)*.replace
 
 fclean: clean
 	rm -rf $(NAME)
@@ -26,4 +28,4 @@ fclean: clean
 re: fclean all
 
 test : all
-	./$(NAME) roger rabbit lol
+	./test.sh
