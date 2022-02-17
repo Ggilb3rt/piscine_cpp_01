@@ -16,6 +16,17 @@ bool arg_check(int ac, char **av)
     return (false);
 }
 
+bool    fileexist(char *file)
+{
+    std::ifstream   ifs(file);
+
+    if (!ifs.is_open())
+        return (false);
+    ifs.close();
+    return (true);
+}
+
+
 std::string file_name_suffixe(std::string file)
 {
     std::string new_name = file;
@@ -65,16 +76,6 @@ bool    replacer(std::string file, std::string s1, std::string s2)
     return (true);
 }
 
-bool    fileexist(char *file)
-{
-    std::ifstream   ifs(file);
-
-    if (!ifs.is_open())
-        return (false);
-    ifs.close();
-    return (true);
-}
-
 int main( int ac, char **av )
 {
     if (!arg_check(ac, av))
@@ -95,6 +96,3 @@ int main( int ac, char **av )
         std::cout << "Error while reading file" << std::endl;
     return (0);
 }
-
-// use string.insert(position, string) and string.erase(start, end)
-// string.find() and string.compare()
