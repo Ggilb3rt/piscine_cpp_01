@@ -1,6 +1,9 @@
 #ifndef HUMANA_H
 # define HUMANA_H
 
+#include <iostream>
+#include "Weapon.hpp"
+
 class HumanA
 {
 private:
