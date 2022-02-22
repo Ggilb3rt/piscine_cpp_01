@@ -4,11 +4,13 @@
 
 Zombie::Zombie( void ) : _name("Robert")
 {
+    std::cout << "Zombie default constructor called" << std::endl;
     return ;
 }
 
 Zombie::Zombie( std::string name ) : _name(name)
 {
+    std::cout << "Zombie constructor called" << std::endl;
     return ;
 }
 

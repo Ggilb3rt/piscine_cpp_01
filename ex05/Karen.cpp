@@ -1,13 +1,13 @@
 #include <iostream>
 #include "Karen.hpp"
 
-Karen::Karen(/* args */)
+Karen::Karen( void )
 {
     std::cout << "A wild Karen appears !" << std::endl;
     return ;
 }
 
-Karen::~Karen()
+Karen::~Karen( void )
 {
     std::cout << "Karen run away !" << std::endl;
     return ;

@@ -5,10 +5,10 @@ FLAGS = -Wall -Wextra -Werror
 STD = -std=c++98
 COMPIL = c++
 SRC = main.cpp
-OBJ = $(SRC:.cpp=.o)
 TESTFILES = files/
+OBJ = $(SRC:.cpp=.o)
 
-.PHONY : all re fclean clean
+.PHONY : all re fclean clean test
 
 %.o: %.cpp
 	$(COMPIL) $(FLAGS) $(STD) -o $@ -c $<

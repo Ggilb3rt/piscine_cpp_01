@@ -14,7 +14,7 @@ Weapon::~Weapon( void )
 std::string const & Weapon::getType( void ) const {
     std::string const & ref = this->_type;
     return (ref);
-} // marchera pas
+}
 
 void    Weapon::setType( std::string type)
 {

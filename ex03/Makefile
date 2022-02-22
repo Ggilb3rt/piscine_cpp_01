@@ -26,4 +26,4 @@ fclean: clean
 re: fclean all
 
 test : all
-	./$(NAME)
+	valgrind ./$(NAME)
