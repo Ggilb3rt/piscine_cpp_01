@@ -34,4 +34,6 @@ public:
 	void	complain( std::string level );
 };
 
+// typedef	void (Karen::*functPtr)(void);
+
 #endif

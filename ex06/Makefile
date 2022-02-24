@@ -26,6 +26,10 @@ fclean: clean
 re: fclean all
 
 test : all
+	./$(NAME)
+	@printf "\n"
+	./$(NAME) "poeut" "lol"
+	@printf "\n\n"
 	./$(NAME) "ERROR"
 	@printf "\n\n"
 	./$(NAME) "WARNING"

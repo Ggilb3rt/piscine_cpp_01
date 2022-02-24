@@ -4,6 +4,7 @@ SUFFIXE=".replace"
 
 echo "Agruments errors\n"
 ./${NAME}
+./${NAME} "" "" ""
 ./${NAME} roger "" rabbit
 ./${NAME} roger "poeut" ""
 ./${NAME} roger rabbit rabbit

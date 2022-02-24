@@ -5,14 +5,18 @@
 
 int main ( void )
 {
-    Zombie  roger("roger");
-    Zombie* momo = newZombie("momo");
+    Zombie  roger("Roger");
+    Zombie* marcel = newZombie("Marcel");
 
-    momo->announce();
+    marcel->announce();
+    std::cout << std::endl;
     randomChump("John Smith");
+    std::cout << std::endl;
     roger.announce();
 
-    delete momo;
+    delete marcel;
+    std::cout << std::endl;
     roger.announce();
+    std::cout << std::endl;
     return (0);
 }

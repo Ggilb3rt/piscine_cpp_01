@@ -16,6 +16,7 @@ void    print_horde( int qt_horde, Zombie *horde)
 int main ( void )
 {
     int     qt_horde = 5;
+    Zombie  robert;
     Zombie  roger("Roger");
     Zombie* horde = zombieHorde(qt_horde, "Marcel");
 

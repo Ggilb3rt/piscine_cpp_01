@@ -6,7 +6,7 @@ Zombie* zombieHorde( int N, std::string name )
 {
     if (N <= 0)
     {
-        std::cout << "Horde must have more than zero zombies" << std::endl;
+        std::cout << "The Horde must have more than zero zombies" << std::endl;
         return NULL;
     }
 

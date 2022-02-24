@@ -49,9 +49,9 @@ void my_find_replace(std::string *origin, std::string to_find, std:: string to_r
     }
 }
 
-bool    replacer(std::string file, std::string s1, std::string s2)
+bool    replacer(char *file, std::string s1, std::string s2)
 {
-    std::ifstream       ifs(file.c_str());
+    std::ifstream       ifs(file);
     std::ofstream       ofs;
     std::string         replace_file = file_name_suffixe(file);
     std::string         str;
@@ -88,11 +88,10 @@ int main( int ac, char **av )
         std::cout << "File error : can't open [" << av[1] <<  "]" << std::endl;
         return (0);
     }
-    std::string     file = av[1];
     std::string     s1 = av[2];
     std::string     s2 = av[3];
 
-    if (!replacer(file, s1, s2))
+    if (!replacer(av[1], s1, s2))
         std::cout << "Error while reading file" << std::endl;
     return (0);
 }
